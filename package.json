@@ -1,0 +1,19 @@
+{
+  "name": "vasco-verify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davenads/VASCO-Verify.git"
+  },
+  "author": "David",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Davenads/VASCO-Verify/issues"
+  },
+  "homepage": "https://github.com/Davenads/VASCO-Verify#readme",
+  "description": ""
+}
