@@ -1,0 +1,465 @@
+# POSS-I Transient Analysis Platform - .gitignore
+
+# ============================================================================
+# Context Folder - Documentation 
+# ============================================================================
+context/
+
+# ============================================================================
+# Environment & Secrets
+# ============================================================================
+.env
+.env.local
+.env.*.local
+.env.production
+*.key
+*.pem
+secrets/
+.secrets
+
+# ============================================================================
+# Python
+# ============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+backend/venv/
+backend/env/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.pytest_cache/
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# pyenv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mkdocs
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# ============================================================================
+# Node / JavaScript / Frontend
+# ============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build outputs
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/out/
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ============================================================================
+# Data Files (Large/Generated)
+# ============================================================================
+# FITS files and astronomical data
+data/
+!data/.gitkeep
+!data/samples/
+data/plates/
+data/uploads/
+data/processed/
+data/cache/
+data/exports/
+
+# ML training data (keep structure, ignore actual data)
+ml/data/raw/
+ml/data/processed/images/
+ml/data/processed/labels/
+ml/data/models/*.pt
+ml/data/models/*.pth
+ml/data/models/*.onnx
+!ml/data/models/.gitkeep
+
+# Catalog cache
+catalogs/
+*.cat
+*.fits
+*.fit
+
+# ============================================================================
+# Machine Learning / AI
+# ============================================================================
+# Model checkpoints and weights
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.pb
+*.onnx
+*.tflite
+*.mlmodel
+
+# Training outputs
+runs/
+logs/
+tensorboard/
+wandb/
+mlruns/
+
+# Dataset splits
+train/
+val/
+test/
+validation/
+
+# Augmented data
+augmented/
+synthetic/
+
+# ============================================================================
+# Databases
+# ============================================================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+transient.db
+backup.db
+
+# PostgreSQL
+*.sql
+
+# Database backups
+backups/
+*.backup
+
+# ============================================================================
+# Docker
+# ============================================================================
+*.dockerignore
+docker-compose.override.yml
+.docker/
+
+# ============================================================================
+# IDEs and Editors
+# ============================================================================
+# VSCode
+.vscode/
+!.vscode/settings.json.example
+!.vscode/extensions.json.example
+*.code-workspace
+
+# IntelliJ IDEA / PyCharm / WebStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# NetBeans
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# ============================================================================
+# Operating System Files
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# ============================================================================
+# Logs
+# ============================================================================
+*.log
+logs/
+log/
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Application logs
+app.log
+application.log
+error.log
+access.log
+combined.log
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
+tmp/
+temp/
+*.tmp
+*.temp
+*.cache
+.cache/
+
+# ============================================================================
+# Build Artifacts
+# ============================================================================
+*.o
+*.a
+*.exe
+*.out
+*.app
+
+# ============================================================================
+# Testing
+# ============================================================================
+.pytest_cache/
+.coverage
+htmlcov/
+coverage/
+.nyc_output/
+test-results/
+*.test.js.snap
+
+# ============================================================================
+# Deployment
+# ============================================================================
+.vercel
+.netlify
+.serverless/
+
+# ============================================================================
+# Miscellaneous
+# ============================================================================
+# Backup files
+*.bak
+*.backup
+*~
+
+# Compressed files (unless specifically needed)
+*.zip
+*.tar
+*.gz
+*.tgz
+*.rar
+*.7z
+
+# Certificates
+*.crt
+*.csr
+
+# Archives
+archives/
+old/
+deprecated/
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+# Exports (user-generated, don't track)
+exports/
+*.csv
+*.json
+*.xlsx
+!**/example.csv
+!**/sample.json
+
+# Reports (generated)
+reports/
+*.pdf
+*.docx
+!context/poss-i-analysis-platform-proposal.md
+
+# Screenshots / images (unless in docs)
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+!context/docs/**/*.png
+!context/docs/**/*.jpg
+!frontend/public/**/*.png
+!frontend/public/**/*.jpg
+
+# ============================================================================
+# KEEP THESE FILES (Explicitly NOT Ignored)
+# ============================================================================
+# Important: These should be tracked in git
+!.gitkeep
+!.gitignore
+!.env.example
+!.dockerignore.example
+!README.md
+!CLAUDE.md
+!LICENSE
+!context/
+!context/**/*.md
+!frontend/public/
+!backend/alembic/versions/
+!scripts/
+!docs/
+
+# ============================================================================
+# Notes
+# ============================================================================
+# This .gitignore is comprehensive for the POSS-I Transient Analysis Platform
+# 
+# IMPORTANT: The context/ folder contains all documentation and SHOULD be 
+# tracked in git. It is NOT ignored.
+#
+# Large data files (FITS, models, datasets) are ignored to keep repo size small.
+# Users should download/generate these locally or use provided scripts.
+#
+# To force-add an ignored file: git add -f <file>
+# To check what's ignored: git check-ignore -v <file>
