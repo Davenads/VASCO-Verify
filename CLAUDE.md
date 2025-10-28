@@ -24,24 +24,15 @@ This is a platform that enables anyone to:
 
 All supporting documentation is located in the `context/` folder at the project root.
 
-### Start Here
-- **[context/docs/README.md](context/docs/README.md)** - Documentation index and navigation hub
-
 ### Essential Reading (in order)
-1. **[context/docs/00-Quick-Start.md](context/docs/00-Quick-Start.md)** - Installation & setup (5 min)
-2. **[context/docs/01-Architecture.md](context/docs/01-Architecture.md)** - System design, tech stack, principles
-3. **[context/docs/02-Project-Structure.md](context/docs/02-Project-Structure.md)** - File/folder organization
-4. **[context/docs/03-Development-Phases.md](context/docs/03-Development-Phases.md)** - 14-week roadmap with tasks
+1. **[context/00-Quick-Start.md](context/00-Quick-Start.md)** - Installation & setup (5 min)
+2. **[context/01-Architecture.md](context/01-Architecture.md)** - System design, tech stack, principles
+3. **[context/02-Project-Structure.md](context/02-Project-Structure.md)** - File/folder organization
+4. **[context/03-Development-Phases.md](context/03-Development-Phases.md)** - 14-week roadmap with tasks
 
 ### Reference Documentation
-- **[context/docs/04-Backend-API.md](context/docs/04-Backend-API.md)** - API endpoints, request/response formats
-- **[context/docs/13-Commands-Reference.md](context/docs/13-Commands-Reference.md)** - Common commands & operations
-
-### Additional Context
-- **[context/DOCUMENTATION-SUMMARY.md](context/DOCUMENTATION-SUMMARY.md)** - Overview of documentation structure
-- **[context/poss-i-analysis-platform-proposal.md](context/poss-i-analysis-platform-proposal.md)** - Formal proposal for researchers
-- **[context/app-names.md](context/app-names.md)** - Potential names for the platform
-- **[context/technical-build-reference.md](context/technical-build-reference.md)** - Original comprehensive reference (archived)
+- **[context/04-Backend-API.md](context/04-Backend-API.md)** - API endpoints, request/response formats
+- **[context/13-Commands-Reference.md](context/13-Commands-Reference.md)** - Common commands & operations
 
 ---
 
@@ -80,7 +71,7 @@ External Services (DSS, PanSTARRS, Gaia)
 ## Project Structure (High-Level)
 
 ```
-poss-transient-platform/
+VASCO-Verify/
 ├── frontend/           # React TypeScript app
 │   └── src/
 │       ├── components/  # UI components
@@ -101,12 +92,12 @@ poss-transient-platform/
 │   ├── evaluate.py
 │   └── data/
 │
-├── docs/               # Documentation (YOU ARE HERE)
+├── context/            # Documentation (YOU ARE HERE)
 ├── data/               # Storage (gitignored)
 └── scripts/            # Utility scripts
 ```
 
-**Full structure**: See [context/docs/02-Project-Structure.md](context/docs/02-Project-Structure.md)
+**Full structure**: See [context/02-Project-Structure.md](context/02-Project-Structure.md)
 
 ---
 
@@ -115,8 +106,8 @@ poss-transient-platform/
 ### Getting Started
 ```bash
 # Clone repo
-git clone <repo-url>
-cd poss-transient-platform
+git clone https://github.com/Davenads/VASCO-Verify.git
+cd VASCO-Verify
 
 # Start services
 docker-compose up -d
@@ -143,7 +134,7 @@ cd backend && black app/ && isort app/
 cd frontend && npm run lint:fix
 ```
 
-**Full commands**: See [context/docs/13-Commands-Reference.md](context/docs/13-Commands-Reference.md)
+**Full commands**: See [context/13-Commands-Reference.md](context/13-Commands-Reference.md)
 
 ---
 
@@ -161,7 +152,7 @@ cd frontend && npm run lint:fix
 
 **Next Phase**: AI Integration (Weeks 5-8)
 
-**Full roadmap**: See [context/docs/03-Development-Phases.md](context/docs/03-Development-Phases.md)
+**Full roadmap**: See [context/03-Development-Phases.md](context/03-Development-Phases.md)
 
 ---
 
@@ -234,7 +225,7 @@ perf: Performance improvement
 chore: Maintenance
 ```
 
-**Full standards**: See [context/docs/11-Code-Standards.md](context/docs/11-Code-Standards.md) (to be created)
+**Note**: Full code standards documentation will be created in Phase 5
 
 ---
 
@@ -253,7 +244,7 @@ POST /analysis/chi-square    # Run statistical test
 POST /export/csv             # Export results
 ```
 
-**Full API docs**: See [context/docs/04-Backend-API.md](context/docs/04-Backend-API.md)
+**Full API docs**: See [context/04-Backend-API.md](context/04-Backend-API.md)
 
 ---
 
@@ -350,9 +341,9 @@ POST /export/csv             # Export results
 ## Getting Help
 
 ### Documentation
-1. **First**: Check [context/docs/README.md](context/docs/README.md) for relevant doc
-2. **Stuck?**: Read [context/docs/13-Commands-Reference.md](context/docs/13-Commands-Reference.md)
-3. **Architecture questions?**: See [context/docs/01-Architecture.md](context/docs/01-Architecture.md)
+1. **First**: Check the context/ folder for relevant documentation
+2. **Stuck?**: Read [context/13-Commands-Reference.md](context/13-Commands-Reference.md)
+3. **Architecture questions?**: See [context/01-Architecture.md](context/01-Architecture.md)
 
 ### External Resources
 - **FastAPI**: https://fastapi.tiangolo.com/
@@ -389,7 +380,7 @@ POST /export/csv             # Export results
 **Focus**: Foundation setup
 
 **Immediate Tasks:**
-1. Initialize repository structure (see [context/docs/02-Project-Structure.md](context/docs/02-Project-Structure.md))
+1. Initialize repository structure (see [context/02-Project-Structure.md](context/02-Project-Structure.md))
 2. Create `docker-compose.yml` for dev environment
 3. Scaffold FastAPI backend with health endpoint
 4. Scaffold React frontend with routing
@@ -448,16 +439,16 @@ POST /export/csv             # Export results
 
 ## Ready to Code?
 
-1. **Read**: [context/docs/00-Quick-Start.md](context/docs/00-Quick-Start.md) for installation
-2. **Understand**: [context/docs/01-Architecture.md](context/docs/01-Architecture.md) for system design  
-3. **Navigate**: [context/docs/02-Project-Structure.md](context/docs/02-Project-Structure.md) for where files go
-4. **Plan**: [context/docs/03-Development-Phases.md](context/docs/03-Development-Phases.md) for what to build
+1. **Read**: [context/00-Quick-Start.md](context/00-Quick-Start.md) for installation
+2. **Understand**: [context/01-Architecture.md](context/01-Architecture.md) for system design
+3. **Navigate**: [context/02-Project-Structure.md](context/02-Project-Structure.md) for where files go
+4. **Plan**: [context/03-Development-Phases.md](context/03-Development-Phases.md) for what to build
 5. **Build**: Start with Phase 1, Week 1-2 tasks
 
-**Questions?** Check the context/docs/ first, they're comprehensive and up-to-date.
+**Questions?** Check the context/ folder first for comprehensive documentation.
 
 ---
 
-**Last Updated**: October 27, 2025  
-**Version**: 1.0 (Pre-development)  
+**Last Updated**: October 28, 2025
+**Version**: 1.0 (Phase 1 - Foundation Complete)
 **Maintainer**: Project Lead

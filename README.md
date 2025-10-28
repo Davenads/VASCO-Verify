@@ -2,6 +2,28 @@
 
 AI-powered web application for verification of historical astronomical transients from POSS-I sky survey (1949-1957).
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Quick Start](#quick-start)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [First-Time Setup](#first-time-setup)
+- [Development](#development)
+  - [Project Structure](#project-structure)
+  - [Common Commands](#common-commands)
+  - [Tech Stack](#tech-stack)
+- [Documentation](#documentation)
+- [Current Status](#current-status)
+- [Scientific Context](#scientific-context)
+- [Contributing](#contributing)
+  - [Development Workflow](#development-workflow)
+- [Testing](#testing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Contact](#contact)
+- [Roadmap](#roadmap)
+
 ## Overview
 
 This platform enables independent verification of groundbreaking research linking astronomical transients with nuclear weapons testing and UAP reports. Using AI-powered detection (YOLOv8) combined with manual verification, researchers can reproduce published findings from *Nature Scientific Reports*.
