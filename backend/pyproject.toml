@@ -1,0 +1,47 @@
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["app/tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "--cov=app --cov-report=html --cov-report=term-missing"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transient-analysis-platform"
+version = "1.0.0"
+description = "AI-powered platform for verification of historical astronomical transients"
+authors = [{name = "David", email = ""}]
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "sqlalchemy>=2.0.25",
+    "alembic>=1.13.1",
+    "numpy>=1.26.3",
+    "pandas>=2.2.0",
+    "astropy>=6.0.0",
+    "torch>=2.1.2",
+    "ultralytics>=8.1.0",
+]

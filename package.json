@@ -1,9 +1,15 @@
 {
-  "name": "vasco-verify",
+  "name": "transient-analysis-platform",
   "version": "1.0.0",
+  "description": "AI-powered platform for verification of historical astronomical transients",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && uvicorn app.main:app --reload",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "test": "echo \"Run tests from frontend/ and backend/ directories\""
   },
   "repository": {
     "type": "git",
@@ -14,6 +20,5 @@
   "bugs": {
     "url": "https://github.com/Davenads/VASCO-Verify/issues"
   },
-  "homepage": "https://github.com/Davenads/VASCO-Verify#readme",
-  "description": ""
+  "homepage": "https://github.com/Davenads/VASCO-Verify#readme"
 }

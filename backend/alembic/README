@@ -1,0 +1,10 @@
+Generic single-database configuration with migrations for the Transient Analysis Platform.
+
+To create a new migration:
+    alembic revision --autogenerate -m "description of changes"
+
+To apply migrations:
+    alembic upgrade head
+
+To revert migrations:
+    alembic downgrade -1

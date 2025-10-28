@@ -1,113 +1,218 @@
-# POSS-I Transient Analysis Platform - Technical Documentation
+# Transient Analysis Platform
 
-**Working Name**: VASCO Verify / OpenTransient (TBD)  
-**Version**: 1.0 (Pre-development)  
-**Last Updated**: October 27, 2025
+AI-powered web application for verification of historical astronomical transients from POSS-I sky survey (1949-1957).
+
+## Overview
+
+This platform enables independent verification of groundbreaking research linking astronomical transients with nuclear weapons testing and UAP reports. Using AI-powered detection (YOLOv8) combined with manual verification, researchers can reproduce published findings from *Nature Scientific Reports*.
+
+**Key Features:**
+- Upload and analyze POSS-I FITS files
+- AI-powered transient detection using YOLOv8
+- Manual verification interface with catalog cross-matching
+- Statistical analysis and correlation tools
+- Export results for further research
+
+## Quick Start
+
+### Prerequisites
+
+- Docker Desktop (Windows, macOS, or Linux)
+- Git
+
+### Installation
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/Davenads/VASCO-Verify.git
+cd VASCO-Verify
+```
+
+2. **Copy environment configuration:**
+```bash
+cp .env.example .env
+```
+
+3. **Start the application:**
+```bash
+make up
+```
+
+Or using docker-compose directly:
+```bash
+docker-compose up -d
+```
+
+4. **Access the application:**
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000
+- API Documentation: http://localhost:8000/docs
+
+### First-Time Setup
+
+Initialize the database:
+```bash
+# Using Docker
+docker-compose exec backend alembic upgrade head
+
+# Or run the init script
+python scripts/init_db.py
+```
+
+## Development
+
+### Project Structure
+
+```
+transient-analysis-platform/
+├── frontend/          # React + TypeScript + Vite
+├── backend/           # FastAPI + Python
+├── ml/                # Machine learning training
+├── data/              # Data storage (gitignored)
+├── scripts/           # Utility scripts
+├── context/           # Documentation
+└── docker-compose.yml
+```
+
+### Common Commands
+
+```bash
+# Start development environment
+make dev
+
+# View logs
+make logs
+
+# Run tests
+make test
+
+# Apply database migrations
+make db-upgrade
+
+# Format code
+make format
+
+# Stop services
+make down
+```
+
+### Tech Stack
+
+**Frontend:**
+- React 18+
+- TypeScript
+- Vite
+- Tailwind CSS
+- Zustand (state management)
+- Axios
+
+**Backend:**
+- FastAPI
+- Python 3.11+
+- SQLAlchemy + Alembic
+- SQLite (development) / PostgreSQL (production)
+
+**AI/ML:**
+- PyTorch 2.1+
+- YOLOv8 (Ultralytics)
+- OpenCV
+- Astropy
+
+**Deployment:**
+- Docker Compose
+- GitHub Actions (CI/CD)
+
+## Documentation
+
+Comprehensive documentation is available in the `context/` directory:
+
+- [Quick Start Guide](context/00-Quick-Start.md)
+- [Architecture Overview](context/01-Architecture.md)
+- [Project Structure](context/02-Project-Structure.md)
+- [Development Phases](context/03-Development-Phases.md)
+- [Backend API Reference](context/04-Backend-API.md)
+- [Commands Reference](context/13-Commands-Reference.md)
+
+## Current Status
+
+**Phase:** Phase 1 - Foundation (Week 1-2)
+**Status:** ✅ Setup Complete
+
+**Completed:**
+- [x] Project structure initialized
+- [x] Docker development environment
+- [x] FastAPI backend with health endpoint
+- [x] React + TypeScript frontend
+- [x] Tailwind CSS styling
+- [x] Database schema design
+- [x] Alembic migrations setup
+
+**Next Steps:**
+- [ ] FITS file upload and processing (Week 3-4)
+- [ ] Image viewer with pan/zoom
+- [ ] AI model integration (Week 5-8)
+
+## Scientific Context
+
+This platform is based on research published in *Scientific Reports* (Nature) that identified:
+- 107,875 transients in POSS-I images
+- 45% increase in transients within ±1 day of nuclear tests
+- 8.5% increase per additional UAP report
+- Statistically significant correlations (p < 0.05)
+
+**Research Paper:**
+[Transients in POSS-I may be associated with nuclear testing and UAP reports](https://www.nature.com/articles/s41598-025-21620-3)
+
+## Contributing
+
+Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting pull requests.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## Testing
+
+Run the test suite:
+
+```bash
+# Backend tests
+cd backend && pytest
+
+# Frontend tests
+cd frontend && npm test
+
+# All tests
+make test
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- VASCO Project for pioneering research on vanishing astronomical sources
+- Nature Scientific Reports for publishing the foundational research
+- Palomar Observatory for the POSS-I sky survey data
+- Open-source community for the incredible tools that made this possible
+
+## Contact
+
+- **GitHub Issues:** [Create an issue](https://github.com/Davenads/VASCO-Verify/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/Davenads/VASCO-Verify/discussions)
+
+## Roadmap
+
+- **v1.0 (Week 14):** MVP with full detection and verification pipeline
+- **v1.1:** Performance optimizations and additional catalog sources
+- **v2.0:** Multi-user support, cloud deployment, POSS-II integration
+- **v3.0:** Advanced ML features, API access, community features
 
 ---
 
-## 📚 Documentation Index
-
-This technical documentation is organized into focused modules for easy reference during development.
-
-### Quick Start
-- **[00-Quick-Start.md](00-Quick-Start.md)** - Get up and running in 5 minutes
-
-### Architecture & Planning
-- **[01-Architecture.md](01-Architecture.md)** - System design, tech stack, and architectural decisions
-- **[02-Project-Structure.md](02-Project-Structure.md)** - Complete file/folder organization
-- **[03-Development-Phases.md](03-Development-Phases.md)** - 14-week roadmap with deliverables
-
-### Implementation Guides
-- **[04-Backend-API.md](04-Backend-API.md)** - API design, endpoints, and request/response formats
-- **[05-Database.md](05-Database.md)** - Schema, models, and migrations
-- **[06-AI-ML-Pipeline.md](06-AI-ML-Pipeline.md)** - Model training, inference, and deployment
-- **[07-Frontend-Components.md](07-Frontend-Components.md)** - React components and state management
-- **[08-Data-Pipeline.md](08-Data-Pipeline.md)** - End-to-end data processing flow
-
-### Development & Operations
-- **[09-Testing.md](09-Testing.md)** - Testing strategies and examples
-- **[10-Deployment.md](10-Deployment.md)** - Docker, production deployment, and CI/CD
-- **[11-Code-Standards.md](11-Code-Standards.md)** - Style guides, conventions, and review checklist
-
-### Reference
-- **[12-External-Dependencies.md](12-External-Dependencies.md)** - APIs, catalogs, and third-party services
-- **[13-Commands-Reference.md](13-Commands-Reference.md)** - Common commands and operations
-
----
-
-## 🎯 Document Purpose
-
-This is the **technical build reference** - separate from the formal proposal. Use these docs when:
-- Setting up your development environment
-- Implementing specific features
-- Making architectural decisions
-- Onboarding new developers
-- Reviewing code and standards
-
----
-
-## 🚀 Getting Started
-
-1. **Start here**: [00-Quick-Start.md](00-Quick-Start.md)
-2. **Understand the system**: [01-Architecture.md](01-Architecture.md)
-3. **Plan your work**: [03-Development-Phases.md](03-Development-Phases.md)
-4. **Start building**: Follow phase-specific implementation guides
-
----
-
-## 📝 How to Use These Docs
-
-Each document is **self-contained** and focused on a specific topic. Documents reference each other where relevant but can be read independently.
-
-**For solo developers**: Read in sequence, implement phase by phase  
-**For teams**: Distribute docs by role (backend devs → API/DB, frontend devs → Components, ML engineers → AI/ML)  
-**For contributors**: Start with Architecture, Code Standards, and the specific feature you're working on
-
----
-
-## 🔄 Living Documentation
-
-These documents should be updated as:
-- Architecture decisions change
-- New features are added
-- Implementation details are refined
-- Lessons are learned during development
-
-**Maintenance**: Keep docs in sync with code. When you change code, update docs.
-
----
-
-## 📂 Related Documents
-
-- **[Proposal Document](../poss-i-analysis-platform-proposal.md)** - Formal proposal for Dr. Bruehl
-- **[App Names List](../app-names.md)** - Potential names for the platform
-
----
-
-## 🤝 Contributing
-
-When adding new documentation:
-1. Keep each file focused on one topic
-2. Use consistent formatting (headers, code blocks, tables)
-3. Include practical examples
-4. Cross-reference related documents
-5. Update this index
-
----
-
-## ⚡ Quick Links
-
-| Need to... | Go to... |
-|------------|----------|
-| Set up environment | [00-Quick-Start.md](00-Quick-Start.md) |
-| Understand tech choices | [01-Architecture.md](01-Architecture.md) |
-| Design an API endpoint | [04-Backend-API.md](04-Backend-API.md) |
-| Train the AI model | [06-AI-ML-Pipeline.md](06-AI-ML-Pipeline.md) |
-| Build a React component | [07-Frontend-Components.md](07-Frontend-Components.md) |
-| Deploy to production | [10-Deployment.md](10-Deployment.md) |
-| Find a command | [13-Commands-Reference.md](13-Commands-Reference.md) |
-
----
-
-**Next Step**: Read [00-Quick-Start.md](00-Quick-Start.md) to begin
+**Built with:** 🔭 Astronomy • 🤖 AI • 🔬 Science • 💻 Open Source
